@@ -5,7 +5,7 @@ import { fonts } from './bundle.css';
 globalStyle('html', {
 	fontSize: '12px',
 	background: '#333',
-	fontFamily: fonts.gothamPro,
+	fontFamily: fonts.agrandirGrand,
 	fontWeight: 'normal',
 });
 

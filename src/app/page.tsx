@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import SVG_Next from '@/assets/vector/next.svg?url';
 import SVG_Vercel from '@/assets/vector/vercel.svg';
-import { s } from './page.css';
+import { s, sFH1 } from './page.css';
 
 export default function Page() {
 	return (
@@ -28,6 +28,8 @@ export default function Page() {
 
 			<div className={cn(s.center)}>
 				<Image className={cn(s.logo)} src={SVG_Next} alt="Next.js Logo" width={180} height={37} priority />
+
+				<p className={cn(sFH1)}>Beer is an art you can drink</p>
 			</div>
 
 			<div className={cn(s.grid)}>
