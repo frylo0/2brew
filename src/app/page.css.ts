@@ -1,9 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
-import { media } from '@/styles/bundle.css';
+import { fonts, media } from '@/styles/bundle.css';
 
 const center = style({
 	display: 'flex',
+	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center',
 	position: 'relative',
@@ -124,6 +125,16 @@ const main = style({
 
 const mainA = style({
 	color: 'white',
+});
+
+export const sFH1 = style({
+	fontFamily: fonts.agrandirGrand,
+	fontWeight: 800,
+	fontSize: 84,
+	lineHeight: '100px',
+	color: 'white',
+	textTransform: 'uppercase',
+	width: 930,
 });
 
 export const s = {
