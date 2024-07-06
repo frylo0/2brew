@@ -1,13 +1,26 @@
 import cn from 'clsx';
+import { ButtonHTMLAttributes } from 'react';
 
-import { s } from './Button.css';
+import SVG_Arrow from '@/assets/vector/arrow.svg';
+import { sArrow, sArrowSvg, sButton, svShape } from './Button.css';
 
-interface ButtonProps extends React.PropsWithChildren {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	color?: keyof typeof s.color;
-	size?: keyof typeof s.size;
+	shape?: keyof typeof svShape;
 }
 
-export const Button: React.FC<ButtonProps> = ({ className, children, color = 'secondary', size = 'small' }) => {
-	return <button className={cn(s.button, s.color[color], s.size[size], className)}>{children}</button>;
+export const Button: React.FC<ButtonProps> = ({ className, children, shape = 'wide', ...props }) => {
+	const isWide = shape === 'wide';
+
+	return (
+		<button className={cn(sButton, svShape[shape], className)} {...props}>
+			<span>{children}</span>
+
+			{isWide && (
+				<span className={cn(sArrow)}>
+					<SVG_Arrow className={cn(sArrowSvg)} />
+				</span>
+			)}
+		</button>
+	);
 };

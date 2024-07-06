@@ -1,34 +1,85 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
-const button = style({
+import { colors, fonts } from '@/styles/bundle.css';
+
+export const sButton = style({
 	display: 'flex',
-	padding: '1em',
-	backdropFilter: 'blur(10px)',
-	fontFamily: 'inherit',
+	flexDirection: 'row',
+	justifyContent: 'center',
+	alignItems: 'center',
+	fontFamily: fonts.agrandirNarrow,
+	fontWeight: 700,
+	fontSize: 20,
+	lineHeight: '20px',
+	border: `2px solid ${colors.black}`,
+	background: colors.pink,
+	color: colors.black,
+	borderRadius: 100,
+	cursor: 'pointer',
+	gap: 20,
+
+	':disabled': {
+		background: colors.white,
+	},
+
+	selectors: {
+		'&:not(:disabled):not(:active):hover': {
+			boxShadow: `4px 4px 0 ${colors.black}`,
+		},
+		'&:not(:disabled):active': {
+			background: colors.black,
+			color: colors.white,
+		},
+	},
 });
 
-const color = styleVariants({
-	primary: {
-		background: 'blue',
-		color: 'white',
-	},
-	secondary: {
-		background: 'white',
-		color: 'blue',
+export const sArrow = style({
+	padding: 6,
+	background: colors.black,
+	borderRadius: 100,
+	width: 24,
+	height: 24,
+	display: 'flex',
+	flexDirection: 'row',
+	justifyContent: 'center',
+	alignItems: 'center',
+	transform: `rotate(45deg)`,
+
+	selectors: {
+		[`${sButton}:hover &`]: {
+			transform: `rotate(0deg)`,
+		},
+		[`${sButton}:active &`]: {
+			background: colors.white,
+			transform: `rotate(45deg)`,
+		},
+		[`${sButton}:active:disabled &`]: {
+			background: colors.black,
+		},
 	},
 });
 
-const size = styleVariants({
-	large: {
-		fontSize: '1.25em',
-	},
-	small: {
-		fontSize: '1em',
+export const sArrowSvg = style({
+	selectors: {
+		[`${sButton}:active:not(:disabled) &`]: {
+			fill: colors.black,
+		},
 	},
 });
 
-export const s = {
-	button,
-	size,
-	color,
-};
+export const svShape = styleVariants({
+	wide: {
+		padding: '15px 30px',
+	},
+	iconic: {
+		padding: 12,
+	},
+});
+
+globalStyle(`${svShape.iconic} svg`, {
+	display: 'block',
+});
+
+globalStyle(`${svShape.iconic}:active:not(:disabled) svg`, {
+	fill: colors.white,
+});
