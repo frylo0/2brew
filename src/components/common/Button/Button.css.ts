@@ -76,6 +76,10 @@ export const svShape = styleVariants({
 	},
 });
 
+globalStyle(`${svShape.iconic} svg`, {
+	display: 'block',
+});
+
 globalStyle(`${svShape.iconic}:active:not(:disabled) svg`, {
 	fill: colors.white,
 });
