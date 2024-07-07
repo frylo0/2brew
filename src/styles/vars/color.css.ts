@@ -5,4 +5,5 @@ export const colors = {
 	violet: '#5C59ED',
 	grey: '#A89FB1',
 	red: '#ED5959',
+	yellow: '#FED33D',
 };
