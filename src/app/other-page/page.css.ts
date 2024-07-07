@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { media } from '@/styles/bundle.css';
+import { calc } from '@/styles/bundle.css';
 
 const main = style({
 	display: 'flex',
@@ -12,13 +12,13 @@ const main = style({
 
 const button = style({
 	'@media': {
-		[media.device.desktop]: {
+		[calc.width('=', 'desktop')]: {
 			width: '300px',
 		},
-		[media.device.tablet]: {
+		[calc.width('=', 'tablet')]: {
 			width: '200px',
 		},
-		[media.device.phone]: {
+		[calc.width('=', 'phone')]: {
 			width: '100px',
 		},
 	},

@@ -32,13 +32,14 @@ export const Modal: React.FC<ModalProps> = ({
 		<ReactModal
 			isOpen={opened}
 			onRequestClose={onClose}
-			className={cn(sModal, className)}
+			className={cn(sModal)}
 			overlayClassName={cn(sOverlay)}
 			shouldCloseOnEsc={closable}
 			shouldCloseOnOverlayClick={closable}
+			shouldFocusAfterRender={false}
 		>
 			<div className={cn(sScrollable)}>
-				<div className={cn(sContent)}>{children}</div>
+				<div className={cn(sContent, className)}>{children}</div>
 			</div>
 
 			{closable && (

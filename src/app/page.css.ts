@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { fonts, media } from '@/styles/bundle.css';
+import { colorMode, fonts } from '@/styles/bundle.css';
 
 const center = style({
 	display: 'flex',
@@ -50,7 +50,7 @@ const logo = style({
 	position: 'relative',
 
 	'@media': {
-		[media.colorMode.dark]: {
+		[colorMode.dark]: {
 			filter: 'invert(1) drop-shadow(0 0 0.3rem #ffffff70)',
 		},
 	},
@@ -58,7 +58,7 @@ const logo = style({
 
 const vercelLogo = style({
 	'@media': {
-		[media.colorMode.dark]: {
+		[colorMode.dark]: {
 			filter: 'invert(1)',
 		},
 	},

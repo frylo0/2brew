@@ -1,22 +1,30 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { colors } from '@/styles/bundle.css';
+import { calc, colors } from '@/styles/bundle.css';
 import { sButton } from '../Button/Button.css';
-
-const modalPaddingInline = 255;
-const modalPaddingBlock = 150;
 
 export const sModal = style({
 	position: 'absolute',
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	maxWidth: `calc(100% - ${modalPaddingInline}px * 2)`,
-	maxHeight: `calc(100% - ${modalPaddingBlock}px * 2)`,
+	maxHeight: `calc(100% - 150px * 2)`,
+
+	'@media': {
+		[calc.width('>=', 'desktop')]: {
+			width: 1410,
+		},
+		[calc.width('<=', 'laptop')]: {
+			width: `calc(100% - 20px * 2)`,
+		},
+		[calc.width('<=', 'phone')]: {
+			width: '100%',
+		},
+	},
 });
 
 export const sScrollable = style({
-	paddingBlockEnd: modalPaddingBlock,
+	paddingBlockEnd: 150,
 });
 
 export const sContent = style({
@@ -25,6 +33,15 @@ export const sContent = style({
 	color: colors.black,
 	borderRadius: 80,
 	padding: '120px 60px',
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			padding: '120px 40px',
+		},
+		[calc.width('<=', 'smartphone')]: {
+			padding: '80px 40px',
+		},
+	},
 });
 
 export const sOverlay = style({
