@@ -1,5 +1,8 @@
+'use client';
+
 import cn from 'clsx';
 import Link, { LinkProps } from 'next/link';
+import { useState } from 'react';
 
 import SVG_Facebook from '@/assets/vector/facebook.svg';
 import SVG_Instagram from '@/assets/vector/instagram.svg';
@@ -19,12 +22,18 @@ import {
 	sMenuList,
 	sSocialLinks,
 } from './Header.css';
+import { MobileMenu } from './MobileMenu/MobileMenu';
 
 export interface HeaderProps {
 	className?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
+	const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+
+	const handleMobileMenuClose = () => setIsMobileMenuOpened(false);
+	const handleMobileMenuOpen = () => setIsMobileMenuOpened(true);
+
 	return (
 		<header className={cn(sHeader, className)}>
 			<Adaptive className={cn(sContent)}>
@@ -45,33 +54,35 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 				<div className={cn(sAside)}>
 					<div className={cn(sSocialLinks)}>
 						<Link href="https://www.instagram.com/twochefsbrewing/" target="_blank">
-							<Button shape="iconic">
+							<Button shape="iconic" theme="white">
 								<SVG_Instagram />
 							</Button>
 						</Link>
 
 						<Link href="https://nl-nl.facebook.com/TwoChefsBrewing/" target="_blank">
-							<Button shape="iconic">
+							<Button shape="iconic" theme="white">
 								<SVG_Facebook />
 							</Button>
 						</Link>
 
 						<Link href="https://nl.linkedin.com/company/two-chefs-brewing" target="_blank">
-							<Button shape="iconic">
+							<Button shape="iconic" theme="white">
 								<SVG_LinkedIn />
 							</Button>
 						</Link>
 
 						<Link href="https://untappd.com/TwoChefsBrewing" target="_blank">
-							<Button shape="iconic">
+							<Button shape="iconic" theme="white">
 								<SVG_Untappd />
 							</Button>
 						</Link>
 					</div>
 
-					<Button className={cn(sMenuButton)} noArrow>
+					<Button className={cn(sMenuButton)} noArrow onClick={handleMobileMenuOpen}>
 						Menu
 					</Button>
+
+					<MobileMenu opened={isMobileMenuOpened} onClose={handleMobileMenuClose} />
 				</div>
 			</Adaptive>
 		</header>
