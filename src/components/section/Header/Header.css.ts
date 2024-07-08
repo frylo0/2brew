@@ -1,7 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 import { sButton } from '@/components/common/Button/Button.css';
-import { colors, fonts } from '@/styles/bundle.css';
+import { calc, colors, fonts } from '@/styles/bundle.css';
 
 export const sHeader = style({});
 
@@ -23,6 +23,15 @@ export const sLogo = style({
 	textTransform: `uppercase`,
 	userSelect: 'none',
 	pointerEvents: 'none',
+	textAlign: 'center',
+});
+
+export const sLogoBr = style({
+	'@media': {
+		[calc.width('>=', 'desktop')]: {
+			display: 'none',
+		},
+	},
 });
 
 export const sMenu = style({
@@ -35,6 +44,12 @@ export const sMenu = style({
 	padding: '16px 40px',
 	backgroundColor: colors.white,
 	fontFamily: fonts.agrandirNormal,
+
+	'@media': {
+		[calc.width('<=', 'tablet')]: {
+			display: 'none',
+		},
+	},
 });
 
 export const sMenuList = style({
@@ -45,7 +60,7 @@ export const sMenuList = style({
 
 export const sMenuItem = style({
 	color: colors.grey,
-	transition: 'color 1s ease, margin-inline-end 1s ease',
+	transition: 'color 0.5s ease, margin-inline-end 0.5s ease',
 	position: 'relative',
 
 	':hover': {
@@ -64,7 +79,7 @@ export const sMenuItem = style({
 		borderRadius: 100,
 		backgroundColor: colors.black,
 		opacity: 0,
-		transition: 'opacity 1s ease',
+		transition: 'opacity 0.5s ease',
 	},
 
 	selectors: {
@@ -74,10 +89,22 @@ export const sMenuItem = style({
 	},
 });
 
+export const sAside = style({
+	display: 'flex',
+	flexDirection: 'row',
+	gap: 10,
+});
+
 export const sSocialLinks = style({
 	display: 'flex',
 	flexDirection: 'row',
 	gap: 10,
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			display: 'none',
+		},
+	},
 });
 
 globalStyle(`${sSocialLinks} ${sButton}`, {
@@ -88,4 +115,23 @@ globalStyle(`${sSocialLinks} ${sButton}`, {
 
 globalStyle(`${sSocialLinks} ${sButton}:hover`, {
 	backgroundColor: colors.pink,
+});
+
+export const sMenuButton = style({
+	width: 123,
+	height: 46,
+	fontWeight: 700,
+	fontSize: 16,
+	fontFamily: fonts.agrandirText,
+	backgroundColor: colors.white,
+
+	':hover': {
+		backgroundColor: colors.pink,
+	},
+
+	'@media': {
+		[calc.width('>=', 'laptop')]: {
+			display: 'none',
+		},
+	},
 });

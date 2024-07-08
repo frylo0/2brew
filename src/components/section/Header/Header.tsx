@@ -7,7 +7,18 @@ import SVG_LinkedIn from '@/assets/vector/linkedin.svg';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
-import { sContent, sHeader, sLogo, sMenu, sMenuItem, sMenuList, sSocialLinks } from './Header.css';
+import {
+	sAside,
+	sContent,
+	sHeader,
+	sLogo,
+	sLogoBr,
+	sMenu,
+	sMenuButton,
+	sMenuItem,
+	sMenuList,
+	sSocialLinks,
+} from './Header.css';
 
 export interface HeaderProps {
 	className?: string;
@@ -17,7 +28,10 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 	return (
 		<header className={cn(sHeader, className)}>
 			<Adaptive className={cn(sContent)}>
-				<figure className={cn(sLogo)}>Two Chefs Brewing</figure>
+				<figure className={cn(sLogo)}>
+					Two Chefs
+					<br className={cn(sLogoBr)} /> Brewing
+				</figure>
 
 				<nav className={cn(sMenu)}>
 					<ul className={cn(sMenuList)}>
@@ -28,30 +42,36 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 					</ul>
 				</nav>
 
-				<div className={cn(sSocialLinks)}>
-					<Link href="https://www.instagram.com/twochefsbrewing/" target="_blank">
-						<Button shape="iconic">
-							<SVG_Instagram />
-						</Button>
-					</Link>
+				<div className={cn(sAside)}>
+					<div className={cn(sSocialLinks)}>
+						<Link href="https://www.instagram.com/twochefsbrewing/" target="_blank">
+							<Button shape="iconic">
+								<SVG_Instagram />
+							</Button>
+						</Link>
 
-					<Link href="https://nl-nl.facebook.com/TwoChefsBrewing/" target="_blank">
-						<Button shape="iconic">
-							<SVG_Facebook />
-						</Button>
-					</Link>
+						<Link href="https://nl-nl.facebook.com/TwoChefsBrewing/" target="_blank">
+							<Button shape="iconic">
+								<SVG_Facebook />
+							</Button>
+						</Link>
 
-					<Link href="https://nl.linkedin.com/company/two-chefs-brewing" target="_blank">
-						<Button shape="iconic">
-							<SVG_LinkedIn />
-						</Button>
-					</Link>
+						<Link href="https://nl.linkedin.com/company/two-chefs-brewing" target="_blank">
+							<Button shape="iconic">
+								<SVG_LinkedIn />
+							</Button>
+						</Link>
 
-					<Link href="https://untappd.com/TwoChefsBrewing" target="_blank">
-						<Button shape="iconic">
-							<SVG_Untappd />
-						</Button>
-					</Link>
+						<Link href="https://untappd.com/TwoChefsBrewing" target="_blank">
+							<Button shape="iconic">
+								<SVG_Untappd />
+							</Button>
+						</Link>
+					</div>
+
+					<Button className={cn(sMenuButton)} noArrow>
+						Menu
+					</Button>
 				</div>
 			</Adaptive>
 		</header>
