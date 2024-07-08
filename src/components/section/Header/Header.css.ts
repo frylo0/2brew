@@ -110,11 +110,6 @@ export const sSocialLinks = style({
 globalStyle(`${sSocialLinks} ${sButton}`, {
 	width: 46,
 	height: 46,
-	backgroundColor: colors.white,
-});
-
-globalStyle(`${sSocialLinks} ${sButton}:hover`, {
-	backgroundColor: colors.pink,
 });
 
 export const sMenuButton = style({

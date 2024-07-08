@@ -12,8 +12,6 @@ export const sButton = style({
 	fontSize: 20,
 	lineHeight: '20px',
 	border: `2px solid ${colors.black}`,
-	background: colors.pink,
-	color: colors.black,
 	borderRadius: 100,
 	cursor: 'pointer',
 	gap: 20,
@@ -82,4 +80,21 @@ globalStyle(`${svShape.iconic} svg`, {
 
 globalStyle(`${svShape.iconic}:active:not(:disabled) svg`, {
 	fill: colors.white,
+});
+
+export const svTheme = styleVariants({
+	pink: {
+		background: colors.pink,
+		color: colors.black,
+	},
+	white: {
+		background: colors.white,
+		color: colors.black,
+
+		selectors: {
+			'&:not(:disabled):not(:active):hover': {
+				background: colors.pink,
+			},
+		},
+	},
 });

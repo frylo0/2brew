@@ -48,3 +48,20 @@ export const IconicDisabled: Story = {
 		disabled: true,
 	},
 };
+
+export const ThemeWhite: Story = {
+	args: {
+		shape: 'wide',
+		children: 'Press me',
+		theme: 'white',
+	},
+};
+
+export const ThemeWhiteDisabled: Story = {
+	args: {
+		shape: 'wide',
+		children: 'Press me',
+		theme: 'white',
+		disabled: true,
+	},
+};
