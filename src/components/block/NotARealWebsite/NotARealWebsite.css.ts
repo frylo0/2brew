@@ -15,6 +15,7 @@ export const sNotARealWebsite = style({
 	color: colors.white,
 	fontFamily: fonts.agrandirText,
 	padding: '1em 2em',
+	zIndex: 10000,
 });
 
 export const sSources = style({
