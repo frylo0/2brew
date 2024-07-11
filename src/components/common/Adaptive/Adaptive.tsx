@@ -1,16 +1,30 @@
 import cn from 'clsx';
-import { HTMLAttributes } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 
 import { sAdaptive } from './Adaptive.css';
 
-export interface AdaptiveProps extends React.PropsWithChildren, HTMLAttributes<HTMLElement> {
+interface AdaptiveOwnProps<E extends ElementType = ElementType> {
 	className?: string;
+	children?: ReactNode;
+	as?: E;
 }
 
-export const Adaptive: React.FC<AdaptiveProps> = ({ className = '', children, ...props }) => {
+type AdaptiveProps<E extends ElementType = ElementType> = AdaptiveOwnProps<E> &
+	Omit<ComponentProps<E>, keyof AdaptiveOwnProps<E>>;
+
+const defaultElement = 'div';
+
+export const Adaptive = <E extends ElementType = typeof defaultElement>({
+	className = '',
+	children,
+	as,
+	...props
+}: AdaptiveProps<E>) => {
+	const TagName = as || defaultElement;
+
 	return (
-		<div className={cn(sAdaptive, className)} {...props}>
+		<TagName className={cn(sAdaptive, className)} {...props}>
 			{children}
-		</div>
+		</TagName>
 	);
 };
