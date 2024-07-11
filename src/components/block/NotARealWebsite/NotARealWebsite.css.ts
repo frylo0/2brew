@@ -1,6 +1,6 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { colors, fonts } from '@/styles/bundle.css';
+import { calc, colors, fonts } from '@/styles/bundle.css';
 
 export const sNotARealWebsite = style({
 	display: 'flex',
@@ -16,6 +16,31 @@ export const sNotARealWebsite = style({
 	fontFamily: fonts.agrandirText,
 	padding: '1em 2em',
 	zIndex: 10000,
+	gap: '2em',
+});
+
+export const sTextDesktop = style({
+	'@media': {
+		[calc.width('<=', 'tablet')]: {
+			display: 'none',
+		},
+	},
+});
+
+export const sTextMobile = style({
+	display: 'flex',
+	flexDirection: 'row',
+	gap: '0.5em',
+	alignItems: 'center',
+
+	'@media': {
+		[calc.width('>=', 'laptop')]: {
+			display: 'none',
+		},
+		[calc.width('<=', 'phone')]: {
+			fontSize: 12,
+		},
+	},
 });
 
 export const sSources = style({
@@ -32,6 +57,12 @@ export const sButton = style({
 	borderRadius: 100,
 	padding: '6px 12px',
 	gap: '0.5em',
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			padding: '6px',
+		},
+	},
 });
 
 export const sBehance = style({
@@ -57,6 +88,14 @@ export const sIcon = style({
 globalStyle(`${sIcon} svg`, {
 	maxWidth: '100%',
 	maxHeight: '100%',
+});
+
+export const sTitle = style({
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			display: 'none',
+		},
+	},
 });
 
 export const sGitHub = style({

@@ -5,7 +5,18 @@ import { ReactNode } from 'react';
 import SVG_Behance from '@/assets/vector/behance.svg';
 import SVG_GitHub from '@/assets/vector/github.svg';
 import SVG_2Brew from '@/assets/vector/two-chefs-brewing.svg';
-import { s2Brew, sBehance, sButton, sGitHub, sIcon, sNotARealWebsite, sSources } from './NotARealWebsite.css';
+import {
+	s2Brew,
+	sBehance,
+	sButton,
+	sGitHub,
+	sIcon,
+	sNotARealWebsite,
+	sSources,
+	sTextDesktop,
+	sTextMobile,
+	sTitle,
+} from './NotARealWebsite.css';
 
 export interface NotARealWebsiteProps {
 	className?: string;
@@ -14,7 +25,12 @@ export interface NotARealWebsiteProps {
 export const NotARealWebsite: React.FC<NotARealWebsiteProps> = ({ className = '' }) => {
 	return (
 		<div className={cn(sNotARealWebsite, className)}>
-			<p> 👉 This is a demo website for showcasing frontend skills. Not a real product. Check out the sources</p>
+			<p className={cn(sTextDesktop)}>
+				👉 This is a demo website for showcasing frontend skills. Not a real product. Check out the sources
+			</p>
+			<p className={cn(sTextMobile)}>
+				<span>👉</span> <span>It&apos;s not a real product, check sources</span>
+			</p>
 
 			<div className={cn(sSources)}>
 				<Button href="https://github.com/frylo0/2brew" icon={<SVG_GitHub />} title="GitHub" className={cn(sGitHub)} />
@@ -46,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({ className, title, href, icon }) => {
 	return (
 		<Link className={cn(sButton, className)} href={href} target="_blank">
 			<figure className={cn(sIcon)}>{icon}</figure>
-			{title}
+			<span className={cn(sTitle)}>{title}</span>
 		</Link>
 	);
 };

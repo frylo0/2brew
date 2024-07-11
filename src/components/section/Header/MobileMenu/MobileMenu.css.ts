@@ -23,6 +23,7 @@ export const sOverlay = style({
 	bottom: 0,
 	backgroundColor: colors.pink,
 	overflow: 'auto',
+	zIndex: 10000,
 
 	'@media': {
 		[calc.width('>=', 'laptop')]: {
