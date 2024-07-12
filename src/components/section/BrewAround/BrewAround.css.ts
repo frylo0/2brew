@@ -2,13 +2,33 @@ import { globalStyle, style } from '@vanilla-extract/css';
 
 import SVG_BrewingBg from '@/assets/vector/brewing-bg.svg?url';
 import SVG_Starmy from '@/assets/vector/starmy.svg?url';
-import { fonts } from '@/styles/bundle.css';
+import { calc, fonts } from '@/styles/bundle.css';
 
 export const sBrewAround = style({
 	marginBlockStart: 100,
 	marginBlockEnd: 120,
-	background: `center no-repeat url(${SVG_BrewingBg.src})`,
-	backgroundSize: '100% 100%',
+	position: 'relative',
+});
+
+export const sBg = style({
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	zIndex: 0,
+	height: 1377,
+	width: '100%',
+	background: `center/cover no-repeat url(${SVG_BrewingBg.src})`,
+
+	'@media': {
+		[calc.width('>=', 'desktop')]: {
+			backgroundSize: '100% 100%',
+		},
+	},
+});
+
+export const sContent = style({
+	position: 'relative',
 });
 
 export const sTitle = style({
