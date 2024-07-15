@@ -61,7 +61,7 @@ export const BrewAround: React.FC<BrewAroundProps> = ({ className = '' }) => {
 						Like many people, at first we wanted to open a bar. So the idea of brewery was born.
 					</Starmy>
 
-					<Starmy title="beer">
+					<Starmy title="Beer">
 						What will impress this beer? With this question we create each variety in brewmen.
 					</Starmy>
 

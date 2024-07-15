@@ -12,6 +12,9 @@ export const sPreview = style({
 			marginBlockEnd: 60,
 		},
 	},
+
+	position: 'relative',
+	zIndex: 1,
 });
 
 export const sHeader = style({
