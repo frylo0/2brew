@@ -4,14 +4,17 @@ import { calc, fonts } from '@/styles/bundle.css';
 
 export const sPreview = style({
 	marginBlockStart: 100,
-	marginBlockEnd: 50,
+	marginBlockEnd: 100,
 
 	'@media': {
 		[calc.width('<=', 'smartphone')]: {
 			marginBlockStart: 60,
-			marginBlockEnd: 30,
+			marginBlockEnd: 60,
 		},
 	},
+
+	position: 'relative',
+	zIndex: 1,
 });
 
 export const sHeader = style({
