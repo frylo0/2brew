@@ -1,5 +1,6 @@
 import cn from 'clsx';
 
+import { Cheers } from '@/components/block/Cheers/Cheers';
 import { BrewAround } from '@/components/section/BrewAround/BrewAround';
 import { Header } from '@/components/section/Header/Header';
 import { Preview } from '@/components/section/Preview/Preview';
@@ -12,6 +13,7 @@ export default function Page() {
 
 			<Preview />
 			<BrewAround />
+			<Cheers />
 		</main>
 	);
 }
