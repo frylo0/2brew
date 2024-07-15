@@ -127,23 +127,23 @@ It is run ONLY for **STAGED** files. So do not be worried to make commits.
 
 Format of branch names:
 
-> 2B-{task-number}-{short-description}
+> LS-{task-number}-{short-description}
 
 Examples:
 
--   `2B-821-fix-bug` - if task exists when branch created
+-   `LS-821-fix-bug` - if task exists when branch created
 -   `NOTASK-update-deps` - if task do not exists when branch created
 
 ## Commit naming
 
 Format of commit messages:
 
-> 2B-{task-number}: What has been done
+> LS-{task-number}: What has been done
 
 Examples:
 
--   `2B-872: Update mobx to 0.1.2`
--   `2B-324: Added shift and debugVideoPos. Upd docs`
+-   `LS-872: Update mobx to 0.1.2`
+-   `LS-324: Added shift and debugVideoPos. Upd docs`
 -   `NOTASK: Logging into chat`
 
 ## Git flow
