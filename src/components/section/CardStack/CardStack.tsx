@@ -11,6 +11,7 @@ import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
 import {
 	sBg,
+	sBtnOrder,
 	sBtnShop,
 	sCardStack,
 	sCategory,
@@ -22,7 +23,6 @@ import {
 	sFeatValue,
 	sFooter,
 	sImage,
-	sMetaData,
 	sOption,
 	sOptions,
 	sOptionSelected,
@@ -67,7 +67,7 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 		Units: '20',
 	};
 
-	const productUrl: string = '';
+	const productUrl: string = '#!';
 
 	const [optionI, setOptionI] = useState(0);
 	const [, optionMetaData] = optionsList[optionI];
@@ -112,7 +112,9 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 							<sup>{priceFract}</sup>€
 						</span>
 
-						<Button onClick={handleOrderClick}>Order</Button>
+						<Button className={cn(sBtnOrder)} onClick={handleOrderClick}>
+							Order
+						</Button>
 					</footer>
 				</div>
 
@@ -121,24 +123,22 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 						<Image src={imageSrc} layout="fill" alt={title} />
 					</figure>
 
-					<div className={cn(sMetaData)}>
-						<div className={cn(sSlogan)}>{slogan}</div>
+					<div className={cn(sSlogan)}>{slogan}</div>
 
-						<ul className={cn(sFeatures)}>
-							{Object.entries(features).map(([name, value], i) => (
-								<li className={cn(sFeat)} key={i}>
-									<span className={cn(sFeatValue)}>{value}</span>
-									<span className={cn(sFeatName)}>{name}</span>
-								</li>
-							))}
+					<ul className={cn(sFeatures)}>
+						{Object.entries(features).map(([name, value], i) => (
+							<li className={cn(sFeat)} key={i}>
+								<span className={cn(sFeatValue)}>{value}</span>
+								<span className={cn(sFeatName)}>{name}</span>
+							</li>
+						))}
 
-							<Link href={productUrl} target="_blank">
-								<Button shape="iconic" theme="white" className={cn(sBtnShop)}>
-									<SVG_Untappd />
-								</Button>
-							</Link>
-						</ul>
-					</div>
+						<Link href={productUrl} target="_blank">
+							<Button shape="iconic" theme="white" className={cn(sBtnShop)}>
+								<SVG_Untappd />
+							</Button>
+						</Link>
+					</ul>
 				</div>
 			</div>
 		</Adaptive>

@@ -1,7 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 import { sButton } from '@/components/common/Button/Button.css';
-import { colors, fonts } from '@/styles/bundle.css';
+import { calc, colors, fonts, fz } from '@/styles/bundle.css';
 
 export const sCardStack = style({
 	position: 'relative',
@@ -36,6 +36,25 @@ export const sCardStack = style({
 		height: 200,
 		borderRadius: 80,
 	},
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			...fz(16, 20),
+
+			':after': {
+				display: 'none',
+			},
+			':before': {
+				display: 'none',
+			},
+		},
+		[calc.width('<=', 'phone')]: {
+			width: '100%',
+			marginInline: 0,
+			marginBlockStart: 80,
+			marginBlockEnd: 60,
+		},
+	},
 });
 
 export const sBg = style({
@@ -49,6 +68,19 @@ export const sBg = style({
 	display: 'flex',
 	flexDirection: 'row',
 	gap: 60,
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			flexDirection: 'column-reverse',
+			gap: 40,
+			padding: '120px 40px',
+		},
+		[calc.width('<=', 'smartphone')]: {
+			gap: 20,
+			padding: '80px 20px',
+			borderRadius: 40,
+		},
+	},
 });
 
 export const sContent = style({});
@@ -62,6 +94,13 @@ export const sTitle = style({
 	lineHeight: '57px',
 	textTransform: `uppercase`,
 	fontWeight: 800,
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			...fz(30, 36),
+			marginBlockStart: 5,
+		},
+	},
 });
 
 export const sSubtitle = style({
@@ -71,10 +110,23 @@ export const sSubtitle = style({
 	lineHeight: '36px',
 	textTransform: `uppercase`,
 	fontWeight: 800,
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			...fz(20, 24),
+			marginBlockStart: 5,
+		},
+	},
 });
 
 export const sDescription = style({
 	marginBlockStart: 20,
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			marginBlockStart: 10,
+		},
+	},
 });
 
 export const sOptions = style({
@@ -82,6 +134,12 @@ export const sOptions = style({
 	display: 'flex',
 	flexDirection: 'row',
 	gap: 10,
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			flexWrap: `wrap`,
+		},
+	},
 });
 
 export const sOption = style({});
@@ -91,6 +149,14 @@ globalStyle(`${sOption} ${sButton}`, {
 	backgroundColor: 'transparent',
 	fontFamily: fonts.agrandirText,
 	fontWeight: 500,
+	whiteSpace: 'nowrap',
+	...fz(16, 16),
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			padding: '6px 12px',
+		},
+	},
 });
 
 export const sOptionSelected = style({});
@@ -106,6 +172,12 @@ export const sFooter = style({
 	flexDirection: 'row',
 	gap: 30,
 	alignItems: 'center',
+
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			gap: 40,
+		},
+	},
 });
 
 export const sPrice = style({
@@ -124,10 +196,35 @@ globalStyle(`${sPrice} sup`, {
 	marginInlineEnd: 6,
 });
 
+export const sBtnOrder = style({
+	'@media': {
+		[calc.width('<=', 'smartphone')]: {
+			width: '100%',
+			justifyContent: 'space-between',
+		},
+	},
+});
+
 export const sPresentation = style({
-	display: 'flex',
-	flexDirection: 'row',
-	gap: 60,
+	display: 'grid',
+	gridTemplateRows: `auto auto`,
+	gridTemplateColumns: `auto auto`,
+	gridTemplateAreas: `
+		"img slogan"
+		"img features"`,
+	gap: '40px 60px',
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			gap: 40,
+		},
+		[calc.width('<=', 'smartphone')]: {
+			gridTemplateAreas: `
+				"img slogan"
+				"features features"`,
+			gap: 20,
+		},
+	},
 });
 
 export const sImage = style({
@@ -135,12 +232,19 @@ export const sImage = style({
 	width: 240,
 	height: 453,
 	minWidth: 240,
-});
+	gridArea: 'img',
 
-export const sMetaData = style({
-	display: 'flex',
-	flexDirection: 'column',
-	gap: 40,
+	'@media': {
+		[calc.width('<=', 'tablet')]: {
+			width: 215,
+			minWidth: 'unset',
+			height: 400,
+		},
+		[calc.width('<=', 'smartphone')]: {
+			width: 130,
+			height: 250,
+		},
+	},
 });
 
 export const sSlogan = style({
@@ -149,12 +253,34 @@ export const sSlogan = style({
 	fontSize: 30,
 	lineHeight: '36px',
 	textTransform: `uppercase`,
+	gridArea: 'slogan',
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			alignSelf: 'end',
+		},
+		[calc.width('<=', 'smartphone')]: {
+			alignSelf: 'center',
+			...fz(20, 24),
+		},
+		[calc.width('<=', 'phone')]: {
+			...fz(16, 19),
+		},
+	},
 });
 
 export const sFeatures = style({
 	display: 'flex',
 	flexDirection: 'row',
 	gap: 30,
+	gridArea: 'features',
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			alignSelf: 'start',
+			alignItems: 'center',
+		},
+	},
 });
 
 export const sFeat = style({
