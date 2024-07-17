@@ -17,7 +17,7 @@ export const Cheers: React.FC<CheersProps> = ({ className = '' }) => {
 	const list: number[] = useMemo(() => Array(count).fill(0), []);
 
 	return (
-		<div className={cn(sCheers, className)}>
+		<section className={cn(sCheers, className)}>
 			<Marquee
 				direction="rtl"
 				velocity={10}
@@ -35,6 +35,6 @@ export const Cheers: React.FC<CheersProps> = ({ className = '' }) => {
 					</div>
 				))}
 			</Marquee>
-		</div>
+		</section>
 	);
 };

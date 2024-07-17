@@ -15,7 +15,7 @@ export const Catalog: React.FC<CatalogProps> = ({ className = '' }) => {
 	const { beers } = useBeers$();
 
 	return (
-		<Adaptive className={cn(sCatalog, className)}>
+		<Adaptive as="section" className={cn(sCatalog, className)}>
 			<h2 className={cn(sTitle)}>Catalog</h2>
 
 			<ul className={cn(sGrid)}>
