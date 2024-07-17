@@ -1,25 +1,28 @@
 'use client';
 
 import cn from 'clsx';
-import { useEffect } from 'react';
 
+import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { useBeers$ } from '@/stores/beers.store';
-import { sCatalog } from './Catalog.css';
+import { sCatalog, sGrid, sTitle } from './Catalog.css';
+import { Product } from './Product/Product';
 
 export interface CatalogProps {
 	className?: string;
 }
 
 export const Catalog: React.FC<CatalogProps> = ({ className = '' }) => {
-	const { beers, ready: beersReady } = useBeers$();
+	const { beers } = useBeers$();
 
-	useEffect(() => {
-		if (beersReady) {
-			console.log('Beers ready:', beers);
-		} else {
-			console.log('Beers loading...');
-		}
-	}, [beers, beersReady]);
+	return (
+		<Adaptive className={cn(sCatalog, className)}>
+			<h2 className={cn(sTitle)}>Catalog</h2>
 
-	return <div className={cn(sCatalog, className)}></div>;
+			<ul className={cn(sGrid)}>
+				{beers.map((item, i) => (
+					<Product {...item} key={i} />
+				))}
+			</ul>
+		</Adaptive>
+	);
 };
