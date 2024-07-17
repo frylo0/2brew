@@ -9,6 +9,7 @@ import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
 import { layoutFill } from '@/lib/nextjs-legacy';
+import { destructFloat } from '@/lib/number';
 import PNG_BockBrulle from '@/public/images/beer/bock-brulle.png';
 import {
 	sBg,
@@ -76,10 +77,7 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 	const [optionI, setOptionI] = useState(0);
 	const [, optionMetaData] = optionsList[optionI];
 
-	const priceInt = Math.trunc(optionMetaData.price);
-	const priceFract = parseInt(
-		optionMetaData.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).split('.')[1]
-	);
+	const { int: priceInt, fract: priceFract } = destructFloat(optionMetaData.price);
 
 	const handleOrderClick = () => {
 		console.log('Order clicked');
