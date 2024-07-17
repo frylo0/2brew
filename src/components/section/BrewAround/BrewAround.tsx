@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import PNG_Brewing1 from '@/assets/raster/brewing-1.png';
 import PNG_Brewing2 from '@/assets/raster/brewing-2.png';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
+import { layoutFill } from '@/lib/nextjs-legacy';
 import {
 	sBg,
 	sBrewAround,
@@ -35,11 +36,11 @@ export const BrewAround: React.FC<BrewAroundProps> = ({ className = '' }) => {
 				<Adaptive className={cn(sTopping)}>
 					<div className={cn(sGallery)}>
 						<div className={cn(sImage)}>
-							<Image src={PNG_Brewing1} alt="Brewing First" layout="fill" objectFit="cover" />
+							<Image src={PNG_Brewing1} alt="Brewing First" style={{ ...layoutFill, objectFit: 'cover' }} />
 						</div>
 
 						<div className={cn(sImage)}>
-							<Image src={PNG_Brewing2} alt="Brewing Second" layout="fill" objectFit="cover" />
+							<Image src={PNG_Brewing2} alt="Brewing Second" style={{ ...layoutFill, objectFit: 'cover' }} />
 						</div>
 					</div>
 

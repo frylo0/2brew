@@ -9,6 +9,7 @@ import { useInterval } from 'usehooks-ts';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
 import { beer } from '@/constants/beers';
+import { layoutFill } from '@/lib/nextjs-legacy';
 import { randUniqIntList } from '@/lib/rand';
 import {
 	sBeers,
@@ -81,7 +82,7 @@ export const Preview: React.FC<PreviewProps> = ({ className = '' }) => {
 				<figure className={cn(sBeersRow, !isEvenStep && sBeersAnimated)}>
 					{listA4Beers.map((beer, i) => (
 						<div className={cn(sCan)} key={i}>
-							<Image src={beer.image} alt={beer.name} layout="fill" />
+							<Image src={beer.image} alt={beer.name} style={layoutFill} />
 						</div>
 					))}
 				</figure>
@@ -89,7 +90,7 @@ export const Preview: React.FC<PreviewProps> = ({ className = '' }) => {
 				<figure className={cn(sBeersRow, isEvenStep && sBeersAnimated)}>
 					{listB4Beers.map((beer, i) => (
 						<div className={cn(sCan)} key={i}>
-							<Image src={beer.image} alt={beer.name} layout="fill" />
+							<Image src={beer.image} alt={beer.name} style={layoutFill} />
 						</div>
 					))}
 				</figure>

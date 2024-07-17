@@ -5,10 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import PNG_BockBrulle from '@/assets/raster/beer/bock-brulle.png';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
+import { layoutFill } from '@/lib/nextjs-legacy';
+import PNG_BockBrulle from '@/public/images/beer/bock-brulle.png';
 import {
 	sBg,
 	sBtnOrder,
@@ -59,6 +60,9 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 	const optionsList = Object.entries(options);
 
 	const imageSrc: string = PNG_BockBrulle.src;
+	const imageWidth: number = PNG_BockBrulle.width;
+	const imageHeight: number = PNG_BockBrulle.height;
+
 	const slogan: string = 'Pumpkin spice? Forget about it! the third edition of our autumn buddy is all you need';
 
 	const features: Record<string, string> = {
@@ -120,7 +124,7 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 
 				<div className={cn(sPresentation)}>
 					<figure className={cn(sImage)}>
-						<Image src={imageSrc} layout="fill" alt={title} />
+						<Image src={imageSrc} alt={title} width={imageWidth} height={imageHeight} style={layoutFill} />
 					</figure>
 
 					<div className={cn(sSlogan)}>{slogan}</div>
