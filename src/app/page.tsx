@@ -6,6 +6,7 @@ import { CardStack } from '@/components/section/CardStack/CardStack';
 import { Catalog } from '@/components/section/Catalog/Catalog';
 import { Header } from '@/components/section/Header/Header';
 import { Preview } from '@/components/section/Preview/Preview';
+import { WhereBuy } from '@/components/section/WhereBuy/WhereBuy';
 import { InitBeers$ } from '@/stores/beers.store';
 import { sMain } from './page.css';
 
@@ -22,6 +23,7 @@ export default function Page() {
 				<Cheers />
 				<CardStack />
 				<Catalog />
+				<WhereBuy />
 			</main>
 		</>
 	);
