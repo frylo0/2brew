@@ -24,6 +24,7 @@ export default function Page() {
 				<CardStack />
 				<Catalog />
 				<WhereBuy />
+				<Cheers />
 			</main>
 		</>
 	);
