@@ -1,6 +1,6 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { colors, fonts, fz } from '@/styles/bundle.css';
+import { calc, colors, fonts, fz } from '@/styles/bundle.css';
 
 export const sProduct = style({
 	cursor: 'pointer',
@@ -8,12 +8,25 @@ export const sProduct = style({
 	flexDirection: 'column',
 	alignItems: 'center',
 	gap: 20,
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			gap: 10,
+		},
+	},
 });
 
 export const sImage = style({
 	position: 'relative',
 	width: 190,
 	height: 360,
+
+	'@media': {
+		[calc.width('<=', 'phone')]: {
+			width: 155,
+			height: 293,
+		},
+	},
 });
 
 export const sImg = style({
@@ -68,6 +81,21 @@ export const sFooter = style({
 	fontFamily: fonts.agrandirNormal,
 	fontWeight: 400,
 	width: 300,
+
+	'@media': {
+		[calc.width('<=', 'laptop')]: {
+			width: 'auto',
+			minWidth: '100%',
+			padding: '14px 20px',
+		},
+		[calc.width('<=', 'phone')]: {
+			position: 'relative',
+			gridTemplateAreas: `
+				"cat  cat"
+				"name name"`,
+			padding: '6px 16px',
+		},
+	},
 });
 
 export const sCategory = style({
@@ -99,6 +127,14 @@ export const sPrice = style({
 	flexDirection: 'row',
 	alignItems: 'flex-start',
 	justifyContent: 'center',
+
+	'@media': {
+		[calc.width('<=', 'phone')]: {
+			position: 'absolute',
+			top: -70,
+			right: 0,
+		},
+	},
 });
 
 globalStyle(`${sPrice} sup`, {
