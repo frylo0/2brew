@@ -8,8 +8,8 @@ import { NotARealWebsite } from '@/components/block/NotARealWebsite/NotARealWebs
 import { WithClientAuth } from '@/lib/WithClientAuth';
 
 export const metadata: Metadata = {
-	title: `TypeScript starter for Next.js`,
-	description: `TypeScript starter for Next.js that includes all you need to build amazing apps`,
+	title: `Two Chefs Brewing | DEMO`,
+	description: `This is demo project! Discover the best independent brewery in the Netherlands! Explore our craft beers, visit our bar, or catch up on the latest news. Embrace the experience!`,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
