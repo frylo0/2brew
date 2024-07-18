@@ -4,6 +4,7 @@ import { Cheers } from '@/components/block/Cheers/Cheers';
 import { BrewAround } from '@/components/section/BrewAround/BrewAround';
 import { CardStack } from '@/components/section/CardStack/CardStack';
 import { Catalog } from '@/components/section/Catalog/Catalog';
+import { Form } from '@/components/section/Form/Form';
 import { Header } from '@/components/section/Header/Header';
 import { Preview } from '@/components/section/Preview/Preview';
 import { WhereBuy } from '@/components/section/WhereBuy/WhereBuy';
@@ -25,6 +26,7 @@ export default function Page() {
 				<Catalog />
 				<WhereBuy />
 				<Cheers />
+				<Form />
 			</main>
 		</>
 	);
