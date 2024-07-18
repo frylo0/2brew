@@ -14,7 +14,7 @@ interface ImagesProps {
 export const Images: React.FC<ImagesProps> = ({ className, showSrcImage, showComponentImage }) => {
 	return (
 		<div className={cn(s.images, className)}>
-			{showSrcImage && <Image src={SVG_Next} alt="Next.js Logo" />}
+			{showSrcImage && <Image src={SVG_Next.src} alt="Next.js Logo" />}
 			{showComponentImage && <SVG_Vercel width={100} />}
 		</div>
 	);

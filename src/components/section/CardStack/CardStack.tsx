@@ -38,10 +38,10 @@ import {
 
 export interface CardStackProps {
 	className?: string;
-	product: IBeer | null;
+	product?: IBeer | null;
 }
 
-export const CardStack: React.FC<CardStackProps> = ({ className = '', product }) => {
+export const CardStack: React.FC<CardStackProps> = ({ className = '', product = null }) => {
 	const category: string = product?.category ?? 'Pastry bock';
 
 	const title: string = product?.name ?? 'Bòck Brûlée';
