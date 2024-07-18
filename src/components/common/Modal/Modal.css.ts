@@ -30,6 +30,7 @@ export const sContent = style({
 		},
 		[calc.width('<=', 'smartphone')]: {
 			padding: '80px 40px',
+			borderRadius: 40,
 		},
 	},
 });
