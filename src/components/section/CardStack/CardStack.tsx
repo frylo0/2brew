@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 import SVG_Untappd from '@/assets/vector/untappd.svg';
+import { SubmitFormModal, SubmitFormProps, SubmitSucceedModal } from '@/components/block/SubmitForm/SubmitForm';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
 import { IBeer } from '@/db/models/beer';
@@ -77,18 +78,28 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '', product = 
 
 	const productUrl: string = '#!';
 
+	const [formOpened, setFormOpened] = useState(false);
+	const [thanksOpened, setThanksOpened] = useState(false);
+
 	const [optionI, setOptionI] = useState(0);
-	const [, optionMetaData] = optionsList[optionI];
+	const [optionName, optionMetaData] = optionsList[optionI];
 
 	const { int: priceInt, fract: priceFract } = destructFloat(optionMetaData.price);
-
-	const handleOrderClick = () => {
-		console.log('Order clicked');
-	};
 
 	const handleOptionClick = (i: number) => () => {
 		setOptionI(i);
 	};
+
+	const handleOrderClick = () => setFormOpened(true);
+
+	const handleFormClose = () => setFormOpened(false);
+	const handleFormSubmit: SubmitFormProps['onSubmit'] = (formData, product, option) => {
+		console.log('From data from CardStack:', { formData: Object.fromEntries(formData.entries()), product, option });
+
+		setFormOpened(false);
+		setThanksOpened(true);
+	};
+	const handleThanksClose = () => setThanksOpened(false);
 
 	return (
 		<Adaptive as="section" className={cn(sCardStack, className)}>
@@ -146,6 +157,15 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '', product = 
 					</ul>
 				</div>
 			</div>
+
+			<SubmitFormModal
+				product={{ category, name: title, image: imageSrc.split('/').pop()!, price }}
+				option={optionName}
+				opened={formOpened}
+				onClose={handleFormClose}
+				onSubmit={handleFormSubmit}
+			/>
+			<SubmitSucceedModal opened={thanksOpened} onClose={handleThanksClose} />
 		</Adaptive>
 	);
 };

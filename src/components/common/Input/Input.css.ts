@@ -12,6 +12,7 @@ export const sInput = style({
 	fontFamily: fonts.agrandirNormal,
 	fontSize: 20,
 	lineHeight: '26px',
+	backgroundColor: colors.white,
 
 	':hover': {
 		borderColor: colors.violet,
