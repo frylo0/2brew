@@ -8,23 +8,12 @@ export const sModal = style({
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	maxHeight: `calc(100% - 150px * 2)`,
-
-	'@media': {
-		[calc.width('>=', 'desktop')]: {
-			width: 1410,
-		},
-		[calc.width('<=', 'laptop')]: {
-			width: `calc(100% - 20px * 2)`,
-		},
-		[calc.width('<=', 'phone')]: {
-			width: '100%',
-		},
-	},
+	maxHeight: `calc(100% - 65px * 2)`,
 });
 
 export const sScrollable = style({
 	paddingBlockEnd: 150,
+	pointerEvents: 'none',
 });
 
 export const sContent = style({
@@ -33,6 +22,7 @@ export const sContent = style({
 	color: colors.black,
 	borderRadius: 80,
 	padding: '120px 60px',
+	pointerEvents: 'all',
 
 	'@media': {
 		[calc.width('<=', 'laptop')]: {
@@ -52,6 +42,7 @@ export const sOverlay = style({
 	bottom: 0,
 	backgroundColor: '#FFFFFF99',
 	overflow: 'auto',
+	zIndex: 5000,
 });
 
 export const sCross = style({
