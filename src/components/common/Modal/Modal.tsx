@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import ReactModal from 'react-modal';
 
 import SVG_Cross from '@/assets/vector/cross.svg';
+import { sAdaptive } from '../Adaptive/Adaptive.css';
 import { Button } from '../Button/Button';
 import { sContent, sCross, sModal, sOverlay, sScrollable } from './Modal.css';
 
@@ -32,7 +33,7 @@ export const Modal: React.FC<ModalProps> = ({
 		<ReactModal
 			isOpen={opened}
 			onRequestClose={onClose}
-			className={cn(sModal)}
+			className={cn(sModal, sAdaptive)}
 			overlayClassName={cn(sOverlay)}
 			shouldCloseOnEsc={closable}
 			shouldCloseOnOverlayClick={closable}

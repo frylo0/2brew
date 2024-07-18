@@ -8,6 +8,7 @@ import { useState } from 'react';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
+import { IBeer } from '@/db/models/beer';
 import { layoutFill } from '@/lib/nextjs-legacy';
 import { destructFloat } from '@/lib/number';
 import PNG_BockBrulle from '@/public/images/beer/bock-brulle.png';
@@ -37,12 +38,13 @@ import {
 
 export interface CardStackProps {
 	className?: string;
+	product?: IBeer | null;
 }
 
-export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
-	const category: string = 'Pastry bock';
+export const CardStack: React.FC<CardStackProps> = ({ className = '', product = null }) => {
+	const category: string = product?.category ?? 'Pastry bock';
 
-	const title: string = 'Bòck Brûlée';
+	const title: string = product?.name ?? 'Bòck Brûlée';
 	const subtitle: string = 'caramel & Vanilla';
 
 	const description: string =
@@ -52,15 +54,16 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '' }) => {
 		" and a touch of sweetness to create a dessert in a glass that's simply irresistible." +
 		" No need for a fancy roaster, but it's even better by a crackling fire.";
 
+	const price: number = product?.price ?? 2.3;
 	const options: Record<string, { price: number }> = {
-		'1 stuk': { price: 2.3 },
-		'3 + 1 stuks': { price: 6.9 },
-		'6 + 2 stuks': { price: 13.8 },
-		'12 + 4 stuks': { price: 27.6 },
+		'1 stuk': { price: price },
+		'3 + 1 stuks': { price: price * 3 },
+		'6 + 2 stuks': { price: price * 6 },
+		'12 + 4 stuks': { price: price * 12 },
 	};
 	const optionsList = Object.entries(options);
 
-	const imageSrc: string = PNG_BockBrulle.src;
+	const imageSrc: string = product?.image ? `/images/beer/${product?.image}` : PNG_BockBrulle.src;
 	const imageWidth: number = PNG_BockBrulle.width;
 	const imageHeight: number = PNG_BockBrulle.height;
 
