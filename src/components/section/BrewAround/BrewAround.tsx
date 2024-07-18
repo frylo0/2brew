@@ -36,7 +36,7 @@ export const BrewAround: React.FC<BrewAroundProps> = ({ className = '' }) => {
 				<Adaptive className={cn(sTopping)}>
 					<div className={cn(sGallery)}>
 						<div className={cn(sImage)}>
-							<Image src={PNG_Brewing1} alt="Brewing First" style={{ ...layoutFill, objectFit: 'cover' }} />
+							<Image src={PNG_Brewing1} alt="Brewing First" style={{ ...layoutFill, objectFit: 'cover' }} priority />
 						</div>
 
 						<div className={cn(sImage)}>
