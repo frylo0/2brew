@@ -4,6 +4,7 @@ import { Cheers } from '@/components/block/Cheers/Cheers';
 import { BrewAround } from '@/components/section/BrewAround/BrewAround';
 import { CardStack } from '@/components/section/CardStack/CardStack';
 import { Catalog } from '@/components/section/Catalog/Catalog';
+import { Footer } from '@/components/section/Footer/Footer';
 import { Form } from '@/components/section/Form/Form';
 import { Gallery } from '@/components/section/Gallery/Gallery';
 import { Header } from '@/components/section/Header/Header';
@@ -29,6 +30,8 @@ export default function Page() {
 				<Cheers />
 				<Gallery />
 				<Form />
+
+				<Footer />
 			</main>
 		</>
 	);

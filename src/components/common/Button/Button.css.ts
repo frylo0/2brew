@@ -97,4 +97,26 @@ export const svTheme = styleVariants({
 			},
 		},
 	},
+	black: {
+		background: colors.black,
+		color: colors.white,
+		borderColor: colors.white,
+
+		selectors: {
+			'&:hover': {
+				borderColor: colors.pink,
+			},
+			'&:not(:disabled):not(:active):hover': {
+				background: colors.pink,
+			},
+		},
+	},
+});
+
+globalStyle(`${svTheme.black}:not(:disabled) svg`, {
+	fill: colors.white,
+});
+
+globalStyle(`${svTheme.black}:hover:not(:disabled) svg`, {
+	fill: colors.black,
 });
