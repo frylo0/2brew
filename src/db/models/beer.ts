@@ -7,7 +7,7 @@ export interface IBeer {
 	image: string;
 }
 
-const beerSchema: Schema<IBeer> = new Schema({
+export const beerSchema = new Schema<IBeer>({
 	name: {
 		type: SchemaTypes.String,
 		required: true,

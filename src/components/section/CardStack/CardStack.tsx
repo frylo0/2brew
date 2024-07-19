@@ -13,6 +13,7 @@ import { IBeer } from '@/db/models/beer';
 import { layoutFill } from '@/lib/nextjs-legacy';
 import { destructFloat } from '@/lib/number';
 import PNG_BockBrulle from '@/public/images/beer/bock-brulle.png';
+import { useBeers$ } from '@/stores/beers.store';
 import {
 	sBg,
 	sBtnOrder,
@@ -43,6 +44,8 @@ export interface CardStackProps {
 }
 
 export const CardStack: React.FC<CardStackProps> = ({ className = '', product = null }) => {
+	const { sendOrder } = useBeers$();
+
 	const category: string = product?.category ?? 'Pastry bock';
 
 	const title: string = product?.name ?? 'Bòck Brûlée';
@@ -93,12 +96,16 @@ export const CardStack: React.FC<CardStackProps> = ({ className = '', product = 
 	const handleOrderClick = () => setFormOpened(true);
 
 	const handleFormClose = () => setFormOpened(false);
-	const handleFormSubmit: SubmitFormProps['onSubmit'] = (formData, product, option) => {
-		console.log('From data from CardStack:', { formData: Object.fromEntries(formData.entries()), product, option });
+
+	const handleFormSubmit: SubmitFormProps['onSubmit'] = async (formData, product, option) => {
+		const sent: boolean = await sendOrder(formData, product, option);
+
+		if (!sent) return;
 
 		setFormOpened(false);
 		setThanksOpened(true);
 	};
+
 	const handleThanksClose = () => setThanksOpened(false);
 
 	return (
