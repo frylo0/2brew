@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import { SubmitForm, SubmitFormProps, SubmitSucceedModal } from '@/components/block/SubmitForm/SubmitForm';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
+import { useBeers$ } from '@/stores/beers.store';
 import { sForm } from './Form.css';
 
 export interface FormProps {
@@ -12,10 +13,13 @@ export interface FormProps {
 }
 
 export const Form: React.FC<FormProps> = ({ className = '' }) => {
+	const { sendOrder } = useBeers$();
+
 	const [thanksOpened, setThanksOpened] = useState(false);
 
-	const handleSubmit: SubmitFormProps['onSubmit'] = (formData, product, option) => {
-		console.log('Form data from From section:', { fromData: Object.fromEntries(formData.entries()), product, option });
+	const handleSubmit: SubmitFormProps['onSubmit'] = async (formData, product, option) => {
+		const sent = sendOrder(formData, product, option);
+		if (!sent) return;
 		setThanksOpened(true);
 	};
 
