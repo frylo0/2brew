@@ -1,0 +1,20 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: 2brew-mongodb
+    restart: always
+    ports:
+      - '${MONGODB_PORT}:27017'
+    env_file:
+      - ./../.env
+    environment:
+      MONGO_USERNAME: ${MONGODB_USERNAME}
+      MONGO_PASSWORD: ${MONGODB_PASSWORD}
+      MONGO_DB_NAME: ${MONGODB_DB_NAME}
+    volumes:
+      - mongodb_data:/data/db
+      - ./initdb.d:/docker-entrypoint-initdb.d
+
+volumes:
+  mongodb_data:
+    driver: local

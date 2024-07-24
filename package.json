@@ -9,21 +9,32 @@
 		"nextjs"
 	],
 	"scripts": {
-		"dev": "next",
+		"dev": "pnpm docker:up && next",
 		"start": "next start",
+
 		"build:stage": "pnpm env:pick --name=stage && next build --debug && pnpm run sb:build && pnpm env:reset",
 		"build:prod": "pnpm env:pick --name=prod && next build && pnpm run sb:build && pnpm env:reset",
+
 		"deploy:stage": "pnpm build:stage && pnpm env:deploy --origin=stage",
 		"deploy:prod": "pnpm build:prod && pnpm env:deploy --origin=production",
+
 		"type-check": "tsc --noEmit",
 		"lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
 		"format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+
 		"postinstall": "husky install",
+
 		"sb:dev": "storybook dev -p 6006",
 		"sb:build": "storybook build -o out/docs",
+
 		"env:pick": "node ./src/env/pick-env.mjs",
 		"env:reset": "node ./src/env/reset-env.mjs",
-		"env:deploy": "node ./src/env/deploy.mjs"
+		"env:deploy": "node ./src/env/deploy.mjs",
+		"env:docker": "docker compose --file ./docker/docker-compose.yml --env-file .env --project-name 2brew",
+
+		"docker:up": "pnpm env:docker up -d",
+		"docker:down": "pnpm env:docker down",
+		"docker:reset": "pnpm env:docker down && docker volume rm 2brew_mongodb_data"
 	},
 	"lint-staged": {
 		"./src/**/*.{ts,js,jsx,tsx}": [

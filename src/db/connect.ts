@@ -1,14 +1,13 @@
 import mongoose from 'mongoose';
 
-const status = { connected: false };
+import { MONGODB_DB_NAME, MONGODB_URI } from '@/constants/env';
 
-const MONGODB_URI = process.env.MONGODB_URI!;
-const MONGODB_NAME = process.env.MONGODB_NAME!;
+const status = { connected: false };
 
 export async function dbConnect() {
 	if (status.connected) return;
 
-	const db = await mongoose.connect(MONGODB_URI, { dbName: MONGODB_NAME });
+	const db = await mongoose.connect(MONGODB_URI, { dbName: MONGODB_DB_NAME });
 	status.connected = true;
 
 	return db;

@@ -1,0 +1,207 @@
+[{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0f6"
+  },
+  "image": "funky-falcon.png",
+  "name": "Funky Falcon",
+  "category": "Pale Ale",
+  "price": 2.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0f7"
+  },
+  "image": "bon-chef.png",
+  "name": "Bon Chef",
+  "category": "New England IPA",
+  "price": 2.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0f8"
+  },
+  "image": "white-mamba.png",
+  "name": "White Mamba",
+  "category": "Witbier",
+  "price": 2.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0f9"
+  },
+  "image": "green-bullet.png",
+  "name": "Green Bullet",
+  "category": "India Pale Ale",
+  "price": 2.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0fa"
+  },
+  "image": "funky-falcon-02.png",
+  "name": "Funky Falcon 0.2%",
+  "category": "Non-alcoholic Pale Ale",
+  "price": 2.3
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0fb"
+  },
+  "image": "sunset-suzy.png",
+  "name": "Sunset Suzy",
+  "category": "Orange Soda Sour",
+  "price": 2.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0fc"
+  },
+  "image": "howling-wolf.png",
+  "name": "Howling Wolf",
+  "category": "Porter",
+  "price": 3
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0fd"
+  },
+  "image": "pils.png",
+  "name": "Pils",
+  "category": "Classic Pilsner",
+  "price": 1.99
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0fe"
+  },
+  "image": "modern-classic.png",
+  "name": "Modern Classic",
+  "category": "Double IPA",
+  "price": 4.5
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f0ff"
+  },
+  "image": "sichuan-dragon.png",
+  "name": "Sichuan Dragon",
+  "category": "Steam Lager",
+  "price": 3
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f100"
+  },
+  "image": "pornstar-martini.png",
+  "name": "PornStar Martini Sour",
+  "category": "Cocktail Series",
+  "price": 3.9
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f101"
+  },
+  "image": "smoked-peach.png",
+  "name": "Smoked Peach Bourbon Sour",
+  "category": "Cocktails Series",
+  "price": 4.25
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f102"
+  },
+  "image": "space-jumper.png",
+  "name": "Space Jumper",
+  "category": "Single Hop Galaxy IPA",
+  "price": 4.5
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f103"
+  },
+  "image": "wind-walker.png",
+  "name": "Wind Walker",
+  "category": "New England Double IPA",
+  "price": 4.5
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f104"
+  },
+  "image": "heading-up.png",
+  "name": "Heading Up",
+  "category": "Red IPA",
+  "price": 4.25
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f105"
+  },
+  "image": "jazz-hands.png",
+  "name": "Jazz Hands",
+  "category": "Honey Chamomile Saison",
+  "price": 3.75
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f106"
+  },
+  "image": "tango-nights.png",
+  "name": "Tango Nights",
+  "category": "Tonka & Salted Caramel Stout",
+  "price": 4
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f107"
+  },
+  "image": "stroopwafel-stout.png",
+  "name": "Stroopwafel Stout",
+  "category": "Stout",
+  "price": 4
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f108"
+  },
+  "image": "imperial-stout.png",
+  "name": "Imperial Stout Ardbeg Whisky",
+  "category": "Barrel Aged",
+  "price": 8.8
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f109"
+  },
+  "image": "imperial-stout-jack-daniels.png",
+  "name": "Imperial Stout Jack Daniels Makers Mark",
+  "category": "Barrel Aged",
+  "price": 8.8
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f10a"
+  },
+  "image": "pie-hard.png",
+  "name": "Pie Hard",
+  "category": "Apple Pie Sour",
+  "price": 4
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f10b"
+  },
+  "image": "summer-lovin.png",
+  "name": "Summer Lovin'",
+  "category": "Cucumber Watermelon Sour",
+  "price": 3.9
+},
+{
+  "_id": {
+    "$oid": "66967ebff7a12a158478f10c"
+  },
+  "image": "happy-trails.png",
+  "name": "Happy Trails",
+  "category": "NZ West Coast IPA",
+  "price": 4.5
+}]
