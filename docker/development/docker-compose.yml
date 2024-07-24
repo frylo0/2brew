@@ -6,7 +6,7 @@ services:
     ports:
       - '27018:${MONGODB_PORT}'
     env_file:
-      - ./../.env
+      - ./../../.env
     environment:
       MONGO_USERNAME: ${MONGODB_USERNAME}
       MONGO_PASSWORD: ${MONGODB_PASSWORD}
@@ -21,20 +21,20 @@ services:
 
   nextjs-service:
     build:
-      context: ./../
-      dockerfile: ./docker/Dockerfile.nextjs
+      context: ./../../
+      dockerfile: ./docker/development/Dockerfile.nextjs
     container_name: 2brew-nextjs
     restart: always
     ports:
       - '3000:3000'
     env_file:
-      - ./../.env
+      - ./../../.env
     environment:
       VIPS_CONCURRENCY: 16 # Value of thread mathcing number of CPU cores
     depends_on:
       - mongodb-service
     volumes:
-      - ..:/app
+      - ./../..:/app
       - /app/node_modules
     networks:
       - app-network

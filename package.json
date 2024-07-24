@@ -9,8 +9,8 @@
 		"nextjs"
 	],
 	"scripts": {
-		"dev": "pnpm env:docker up",
-		"start": "next start",
+		"dev": "pnpm docker:dev up",
+		"serve": "pnpm docker:prod up -d",
 
 		"build:stage": "pnpm env:pick --name=stage && next build --debug && pnpm run sb:build && pnpm env:reset",
 		"build:prod": "pnpm env:pick --name=prod && next build && pnpm run sb:build && pnpm env:reset",
@@ -30,11 +30,14 @@
 		"env:pick": "node ./src/env/pick-env.mjs",
 		"env:reset": "node ./src/env/reset-env.mjs",
 		"env:deploy": "node ./src/env/deploy.mjs",
-		"env:docker": "docker compose --file ./docker/docker-compose.yml --env-file .env --project-name 2brew",
 
-		"docker:up": "pnpm env:docker up -d",
-		"docker:down": "pnpm env:docker down",
-		"docker:reset": "pnpm env:docker down && docker volume rm $(docker volume ls -q --filter name=2brew) && pnpm env:docker build --no-cache"
+		"docker": "docker compose --env-file .env --project-name 2brew",
+
+		"docker:dev": "pnpm docker --file ./docker/development/docker-compose.yml",
+		"docker:dev.reset": "pnpm docker:dev down && docker volume rm $(docker volume ls -q --filter name=2brew) && pnpm docker:dev build --no-cache",
+
+		"docker:prod": "pnpm docker --file ./docker/production/docker-compose.yml",
+		"docker:prod.reset": "pnpm docker:prod down && docker volume rm $(docker volume ls -q --filter name=2brew) && pnpm docker:prod build --no-cache"
 	},
 	"lint-staged": {
 		"./src/**/*.{ts,js,jsx,tsx}": [
