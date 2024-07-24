@@ -29,6 +29,8 @@ services:
       - '3000:3000'
     env_file:
       - ./../.env
+    environment:
+      VIPS_CONCURRENCY: 16 # Value of thread mathcing number of CPU cores
     depends_on:
       - mongodb-service
     volumes:
