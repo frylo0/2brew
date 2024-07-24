@@ -36,3 +36,6 @@ Dockerfile
 .dockerignore
 
 # Ignore any other files/directories that are not necessary for the build
+.git/
+README.md
+README/

@@ -34,10 +34,10 @@
 		"docker": "docker compose --env-file .env --project-name 2brew",
 
 		"docker:dev": "pnpm docker --file ./docker/development/docker-compose.yml",
-		"docker:dev.reset": "pnpm docker:dev down && docker volume rm $(docker volume ls -q --filter name=2brew) && pnpm docker:dev build --no-cache",
+		"docker:dev.reset": "pnpm docker:dev down --volumes && pnpm docker:dev build --no-cache",
 
 		"docker:prod": "pnpm docker --file ./docker/production/docker-compose.yml",
-		"docker:prod.reset": "pnpm docker:prod down && docker volume rm $(docker volume ls -q --filter name=2brew) && pnpm docker:prod build --no-cache"
+		"docker:prod.reset": "pnpm docker:prod down --volumes && pnpm docker:prod build --no-cache"
 	},
 	"lint-staged": {
 		"./src/**/*.{ts,js,jsx,tsx}": [

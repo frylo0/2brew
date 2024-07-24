@@ -1,6 +1,8 @@
 import { dbConnect } from '@/db/connect';
 import { Beer } from '@/db/models/beer';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
 	await dbConnect();
 
