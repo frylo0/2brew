@@ -4,8 +4,6 @@ const username = process.env.MONGO_USERNAME;
 const password = process.env.MONGO_PASSWORD;
 const dbName = process.env.MONGO_DB_NAME;
 
-console.log({ username, password, dbName });
-
 db = db.getSiblingDB('admin');
 
 db.createUser({
