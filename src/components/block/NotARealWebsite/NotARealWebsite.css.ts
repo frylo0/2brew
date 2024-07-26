@@ -80,12 +80,13 @@ export const sIcon = style({
 
 	selectors: {
 		[`${sBehance} &`]: {
-			filter: 'grayscale(1)',
+			filter: 'grayscale(0)',
 		},
 	},
 });
 
 globalStyle(`${sIcon} svg`, {
+	width: '100%',
 	maxWidth: '100%',
 	maxHeight: '100%',
 });
