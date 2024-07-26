@@ -160,17 +160,22 @@ export const sOptions = style({
 	flexDirection: 'row',
 	justifyContent: 'space-between',
 	gap: 30,
-	marginBlockStart: 120,
 
-	'@media': {
-		[calc.width('<=', 'laptop')]: {
-			marginBlockStart: 100,
-			alignItems: 'flex-start',
-		},
-		[calc.width('<=', 'smartphone')]: {
-			flexDirection: 'column',
-			gap: 20,
-			marginBlockStart: 60,
+	selectors: {
+		'div&': {
+			marginBlockStart: 120,
+
+			'@media': {
+				[calc.width('<=', 'laptop')]: {
+					marginBlockStart: 100,
+					alignItems: 'flex-start',
+				},
+				[calc.width('<=', 'smartphone')]: {
+					flexDirection: 'column',
+					gap: 20,
+					marginBlockStart: 60,
+				},
+			},
 		},
 	},
 });
