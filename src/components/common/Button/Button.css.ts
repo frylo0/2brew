@@ -15,6 +15,7 @@ export const sButton = style({
 	borderRadius: 100,
 	cursor: 'pointer',
 	gap: 20,
+	padding: 0,
 
 	':disabled': {
 		background: colors.white,
@@ -58,6 +59,9 @@ export const sArrow = style({
 });
 
 export const sArrowSvg = style({
+	width: 12,
+	height: 12,
+
 	selectors: {
 		[`${sButton}:active:not(:disabled) &`]: {
 			fill: colors.black,
