@@ -1,0 +1,11 @@
+# Allow all user agents
+User-agent: *
+
+# Allow access to all pages
+Disallow:
+
+# Allow access to all query parameters
+Allow: /*?*
+
+# Sitemap location (replace with the actual URL of your sitemap)
+Sitemap: /sitemap.xml
