@@ -27,7 +27,7 @@ export const Catalog: React.FC<CatalogProps> = ({ className = '' }) => {
 	const handleModalClose = () => setModalOpened(false);
 
 	return (
-		<Adaptive as="section" className={cn(sCatalog, className)}>
+		<Adaptive as="section" id="catalog" className={cn(sCatalog, className)}>
 			<h2 className={cn(sTitle)}>Catalog</h2>
 
 			<ul className={cn(sGrid)}>

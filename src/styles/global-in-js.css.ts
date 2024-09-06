@@ -8,6 +8,7 @@ globalStyle('html', {
 	color: colors.black,
 	fontFamily: fonts.agrandirGrand,
 	fontWeight: 'normal',
+	scrollBehavior: 'smooth',
 });
 
 globalStyle('*', {
