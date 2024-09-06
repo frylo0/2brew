@@ -4,7 +4,6 @@ import { calc, fonts, fz } from '@/styles/bundle.css';
 
 export const sCatalog = style({
 	marginBlock: 100,
-	scrollMarginBlockStart: 50,
 
 	'@media': {
 		[calc.width('<=', 'smartphone')]: {

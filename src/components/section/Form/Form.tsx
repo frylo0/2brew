@@ -26,7 +26,7 @@ export const Form: React.FC<FormProps> = ({ className = '' }) => {
 	const handleThanksClose = () => setThanksOpened(false);
 
 	return (
-		<Adaptive as="section" className={cn(sForm, className)}>
+		<Adaptive as="section" id="submit" className={cn(sForm, className)}>
 			<SubmitForm onSubmit={handleSubmit} />
 			<SubmitSucceedModal opened={thanksOpened} onClose={handleThanksClose} />
 		</Adaptive>

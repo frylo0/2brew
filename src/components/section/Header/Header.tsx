@@ -44,10 +44,10 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
 				<nav className={cn(sMenu)}>
 					<ul className={cn(sMenuList)}>
-						<MenuItem href="#">About us</MenuItem>
-						<MenuItem href="#">Beers</MenuItem>
-						<MenuItem href="#">Buy</MenuItem>
-						<MenuItem href="#">Contacts</MenuItem>
+						<MenuItem href="#about">About us</MenuItem>
+						<MenuItem href="#catalog">Beers</MenuItem>
+						<MenuItem href="#submit">Buy</MenuItem>
+						<MenuItem href="#contacts">Contacts</MenuItem>
 					</ul>
 				</nav>
 
