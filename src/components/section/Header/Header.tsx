@@ -10,6 +10,7 @@ import SVG_LinkedIn from '@/assets/vector/linkedin.svg';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
+import { social } from '@/constants/project';
 import {
 	sAside,
 	sContent,
@@ -53,25 +54,25 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
 				<div className={cn(sAside)}>
 					<div className={cn(sSocialLinks)}>
-						<Link href="https://www.instagram.com/twochefsbrewing/" target="_blank">
+						<Link href={social.instagram} target="_blank">
 							<Button shape="iconic" theme="white">
 								<SVG_Instagram />
 							</Button>
 						</Link>
 
-						<Link href="https://nl-nl.facebook.com/TwoChefsBrewing/" target="_blank">
+						<Link href={social.facebook} target="_blank">
 							<Button shape="iconic" theme="white">
 								<SVG_Facebook />
 							</Button>
 						</Link>
 
-						<Link href="https://nl.linkedin.com/company/two-chefs-brewing" target="_blank">
+						<Link href={social.linkedIn} target="_blank">
 							<Button shape="iconic" theme="white">
 								<SVG_LinkedIn />
 							</Button>
 						</Link>
 
-						<Link href="https://untappd.com/TwoChefsBrewing" target="_blank">
+						<Link href={social.untappd} target="_blank">
 							<Button shape="iconic" theme="white">
 								<SVG_Untappd />
 							</Button>

@@ -8,6 +8,7 @@ import SVG_LinkedIn from '@/assets/vector/linkedin.svg';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
+import { social } from '@/constants/project';
 import {
 	sButtonClose,
 	sHeader,
@@ -70,21 +71,29 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ className = '', opened, 
 				</nav>
 
 				<div className={cn(sSocialIcons)}>
-					<Button shape="iconic" theme="white">
-						<SVG_Instagram />
-					</Button>
+					<Link href={social.instagram}>
+						<Button shape="iconic" theme="white">
+							<SVG_Instagram />
+						</Button>
+					</Link>
 
-					<Button shape="iconic" theme="white">
-						<SVG_Facebook />
-					</Button>
+					<Link href={social.facebook}>
+						<Button shape="iconic" theme="white">
+							<SVG_Facebook />
+						</Button>
+					</Link>
 
-					<Button shape="iconic" theme="white">
-						<SVG_LinkedIn />
-					</Button>
+					<Link href={social.linkedIn}>
+						<Button shape="iconic" theme="white">
+							<SVG_LinkedIn />
+						</Button>
+					</Link>
 
-					<Button shape="iconic" theme="white">
-						<SVG_Untappd />
-					</Button>
+					<Link href={social.untappd}>
+						<Button shape="iconic" theme="white">
+							<SVG_Untappd />
+						</Button>
+					</Link>
 				</div>
 			</Adaptive>
 		</ReactModal>
