@@ -9,6 +9,7 @@ import SVG_LinkedIn from '@/assets/vector/linkedin.svg';
 import SVG_Untappd from '@/assets/vector/untappd.svg';
 import { Adaptive } from '@/components/common/Adaptive/Adaptive';
 import { Button } from '@/components/common/Button/Button';
+import { social } from '@/constants/project';
 import { layoutFill } from '@/lib/nextjs-legacy';
 import { sContent, sFigure, sFooter, sGrid, sItem, sMetaData, sSocial, sTitle } from './Footer.css';
 
@@ -33,25 +34,25 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
 					</ul>
 
 					<div className={cn(sSocial)}>
-						<Link href="#!">
+						<Link href={social.instagram}>
 							<Button shape="iconic" theme="black">
 								<SVG_Instagram />
 							</Button>
 						</Link>
 
-						<Link href="#!">
+						<Link href={social.facebook}>
 							<Button shape="iconic" theme="black">
 								<SVG_Facebook />
 							</Button>
 						</Link>
 
-						<Link href="#!">
+						<Link href={social.linkedIn}>
 							<Button shape="iconic" theme="black">
 								<SVG_LinkedIn />
 							</Button>
 						</Link>
 
-						<Link href="#!">
+						<Link href={social.untappd}>
 							<Button shape="iconic" theme="black">
 								<SVG_Untappd />
 							</Button>
