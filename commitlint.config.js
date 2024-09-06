@@ -9,7 +9,7 @@ if (!RegExp.escape) {
 
 module.exports = {
 	rules: {
-		'task-numbers': [2, 'always', 'LS-'],
+		'task-numbers': [2, 'always', 'BZ-'],
 	},
 	plugins: [
 		{

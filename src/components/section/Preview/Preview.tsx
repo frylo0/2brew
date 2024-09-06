@@ -72,7 +72,7 @@ export const Preview: React.FC<PreviewProps> = ({ className = '' }) => {
 				<div className={cn(sForm)}>
 					<p>We have everything we need for a real beer gourmet, from classic to exotic!</p>
 
-					<Link href="#!" className={cn(sLinkPrimary)}>
+					<Link href="#catalog" className={cn(sLinkPrimary)}>
 						<Button className={cn(sTriggerPrimary)}>Buy in bulk</Button>
 					</Link>
 				</div>
