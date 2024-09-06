@@ -27,7 +27,7 @@ export interface BrewAroundProps {
 
 export const BrewAround: React.FC<BrewAroundProps> = ({ className = '' }) => {
 	return (
-		<section className={cn(sBrewAround, className)}>
+		<section className={cn(sBrewAround, className)} id="about">
 			<div className={cn(sBg)} />
 
 			<div className={cn(sContent)}>

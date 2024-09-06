@@ -15,6 +15,10 @@ globalStyle('*', {
 	boxSizing: 'border-box',
 });
 
+globalStyle('[id]', {
+	scrollMarginBlockStart: 50,
+});
+
 globalStyle('a', {
 	color: 'inherit',
 	textDecoration: 'none',

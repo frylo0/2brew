@@ -18,7 +18,7 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
 	return (
-		<footer className={cn(sFooter, className)}>
+		<footer className={cn(sFooter, className)} id="contacts">
 			<Adaptive className={cn(sContent)}>
 				<h3 className={cn(sTitle)}>Let&apos;s start</h3>
 
